@@ -1,1 +1,1 @@
-# Spatial-VLM
+# SpatialBot
