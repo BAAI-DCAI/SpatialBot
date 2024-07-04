@@ -12,16 +12,9 @@ This is the official repo for "SpatialBot: Precise Spatial Understanding with Vi
 
 We are working  hard to update this repo and paper, stay tuned!
 
-
-[comment]: <> (## 🤖 SpatialBot Model)
-
-[comment]: <> (### Install)
-
-[comment]: <> (Please refer to [Bunny]&#40;https://github.com/BAAI-DCAI/Bunny?tab=readme-ov-file#install&#41; to install locally, or start from docker image: `docker pull russellrobin/bunny:latest`)
-
 ## SpatialQA Dataset
 
-### Image preparation
+### Image
 We use [LAION-2M](https://huggingface.co/datasets/BoyaWu10/Bunny-v1_0-data/tree/main/pretrain) for pretraining. 
 The finetuning dataset is based on [Bunny_695k](https://huggingface.co/datasets/BoyaWu10/Bunny-v1_0-data/tree/main/finetune). 
 Please download images in Bunny_695k first, and then download SpatialQA high-level images. (Available)
@@ -29,6 +22,10 @@ Please download images in Bunny_695k first, and then download SpatialQA high-lev
 ### Data json
 Pretrain data json file can be found in [LAION-2M](https://huggingface.co/datasets/BoyaWu10/Bunny-v1_0-data/tree/main/pretrain).
 SpatialQA finetuning json file will be available soon.
+
+### Prepare your own RGB-D data
+We recommend using depth information from sensors if possible.
+Follow [instructions](https://github.com/BAAI-DCAI/SpatialBot/SpatialQA_depthmap_instruction/SpatialQA_depthmap_instruction.md) to prepare estimated depth information on your own RGB images.
 
 ## SpatialBot Installation
 SpatialBot is a multi-image version of [Bunny](https://github.com/BAAI-DCAI/Bunny). 
