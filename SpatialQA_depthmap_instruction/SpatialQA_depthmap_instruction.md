@@ -16,7 +16,7 @@ def save_raw_16bit(depth, fpath="raw.png"):
     depth.save(fpath)
 ```
 
-Run ZoeDepth for a directory:
+Use or [codes](https://github.com/BAAI-DCAI/SpatialBot/blob/main/SpatialQA_depthmap_instruction/zoe.py) to run ZoeDepth for a directory:
 ```
 python zoe.py --img-dir </path/of/rgb> --save-dir </path/to/save/depth>
 ```
