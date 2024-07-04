@@ -30,13 +30,8 @@ device = torch.device("cuda") if torch.cuda.is_available() else "cpu"
 
 def call_bunny_engine_df(args, sample, model, tokenizer=None, processor=None):
     prompt = f"USER:{sample['question']} ASSISTANT:"
-    # CWX NOTE DELETE
-    # prompt = prompt.replace('purple','blue')
     input_ids = tokenizer_multi_image_token(prompt, tokenizer, return_tensors='pt').unsqueeze(0).cuda()
 
-    # image1 = sample['image'].half() # [3,384,384]
-
-    # 多图
     for i in range(len(sample['image'])):
         sample['image'][i] = sample['image'][i].half()
     
@@ -88,21 +83,8 @@ def set_seed(seed_value):
     torch.backends.cudnn.benchmark = False
 
 def process_answer(response,dataset):
-    """
-    整理bunny返回的response
-    """
-    # # TODO assert 这两个编码方式
-    # try:
-    #     # 0-100编码
-    #     response_ = response.strip()[1:-1].replace(" ", "")
-    #     response_ = response_.split(",")
-    #     response_ = [int(res) - 50 for res in response_]   
-                
-    # except:
-    # 0-1编码
     response_ = response.strip()[1:-1].replace(" ", "")
     response_ = response_.split(",")
-    # response_ = [float(res) -0.5 for res in response_]   
     response_ = [float(res) for res in response_]   
 
     if dataset == 'maniskill':
@@ -116,10 +98,6 @@ def process_answer(response,dataset):
         for i in range(4, 7):
             offset = float(response_[i])
             response_[i] = offset * (max_angle - min_angle) + min_angle
-        # z是反的
-        response_[2] = -response_[2]
-        response_[7] = response_[7] * (1 - (-1)) + (-1)
-        response_[0] = int(response_[0])
     else:
         raise NotImplementedError
 
@@ -165,8 +143,8 @@ def main():
         if os.path.exists(args.image_path):
             print('bunny gets ros image')
             cur_time = time.time()
-            try: # png可能在传输/保存过程中，报错为 PIL.UnidentifiedImageError: cannot identify image file
-                image = Image.open(args.image_path).convert('RGB') # 单图
+            try:
+                image = Image.open(args.image_path).convert('RGB')
             except:
                 time.sleep(0.1)
                 continue
@@ -179,7 +157,6 @@ def main():
                 for append_idx in range(append_num):
                     img_list_converted.append(copy.deepcopy(img_list_converted[-1]))
 
-            # CWX NOTE RGB image
             while True:
                 if os.path.exists(args.goal_path):
                     try:
@@ -197,14 +174,8 @@ def main():
             with torch.no_grad():
                 answer = call_model_engine(args, sample, model, tokenizer, processor)
                 print('answer',answer)
-                # answer = process_answer(answer,args.dataset) 
-                # 在calvin代码中decode bunny answer, /mnt/hpfs/baaidcai/wenxiao/calvin/calvin_models/calvin_agent/evaluation/evaluate_policy_call_bunny.py
-
-                # 保存answer
                 with open(args.answer_path, "w", encoding="utf-8") as f:
                     json.dump(answer, f)
-
-                # 删除图片
                 try:
                     os.remove(args.image_path)
                 except OSError as e:
