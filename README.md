@@ -10,7 +10,8 @@
 
 This is the official repo for "SpatialBot: Precise Spatial Understanding with Vision Language Models".
 
-SpatialQA dataset, SpatialBench benchmark, and SpatialBot models and checkpoints will be available upon the release of the final version of the paper.
+We are working  hard to update this repo and paper, stay tuned!
+
 
 [comment]: <> (## 🤖 SpatialBot Model)
 
@@ -18,7 +19,18 @@ SpatialQA dataset, SpatialBench benchmark, and SpatialBot models and checkpoints
 
 [comment]: <> (Please refer to [Bunny]&#40;https://github.com/BAAI-DCAI/Bunny?tab=readme-ov-file#install&#41; to install locally, or start from docker image: `docker pull russellrobin/bunny:latest`)
 
-## Model Installation
+## SpatialQA Dataset
+
+### Image preparation
+We use [LAION-2M](https://huggingface.co/datasets/BoyaWu10/Bunny-v1_0-data/tree/main/pretrain) for pretraining. 
+The finetuning dataset is based on [Bunny_695k](https://huggingface.co/datasets/BoyaWu10/Bunny-v1_0-data/tree/main/finetune). 
+Please download images in Bunny_695k first, and then download SpatialQA high-level images. (Available)
+
+### Data json
+Pretrain data json file can be found in [LAION-2M](https://huggingface.co/datasets/BoyaWu10/Bunny-v1_0-data/tree/main/pretrain).
+SpatialQA finetuning json file will be available soon.
+
+## SpatialBot Installation
 SpatialBot is a multi-image version of [Bunny](https://github.com/BAAI-DCAI/Bunny). 
 If you've installed Bunny, just replace the code with ours are reinstall ```bunny``` package.
 You can start from a docker or configure local environments.
@@ -40,9 +52,39 @@ cd SpatialBot && pip install --upgrade transformers && pip uninstall bunny && pi
 ### Local Installation
 Follow instructions [here](https://github.com/BAAI-DCAI/Bunny?tab=readme-ov-file#local-installation), but use codes from this repo.
 
+## SpatialBot Training
+[Download](https://github.com/BAAI-DCAI/Bunny?tab=readme-ov-file#support-models) the base LLM and vision tower weights first.
+To pretrain the model:
+```
+sh script/train/pretrain.sh
+```
+To finetune SpatialBot with LoRA:
+```
+sh script/train/finetune_lora.sh
+```
 
-## 🔗 Citation
-If you find this repository helpful, please cite the paper below.
+Parameters:
+```MODEL_TYPE```: base LLM type, we support ```phi-2, phi-3,qwen1.5-0.5b, qwen1.5-1.8b (4B), and llama3-8b```.
+
+```OUTPUT_DIR ```: path to save model.
+
+```--model_name_or_path```: path to base LLM. 
+
+```--vision_tower```: path to vision encoder. We support CLIP, SigLIP, and EVA-CLIP.
+
+```PRETRAIN_DIR ```: path to a pretrained model.
+
+```--version```: for Phi-2 and QWen, use ```bunny```. For ```Phi-3/Llama3```, please use ``
+
+Our pretrained model can be found [here](https://github.com/BAAI-DCAI/Bunny?tab=readme-ov-file#model-zoo).
+Finetuned SpatialBot is available soon!
+
+## SpatialBot Evaluation
+Follow our [instructions](https://github.com/BAAI-DCAI/SpatialBot/blob/main/script/eval/lora/evaluation_lora.md) to prepare data and evaluate SpatialBot on SpatialBench and general VLM benchmarks.
+
+
+## 🔗 Usage
+If you find this repository helpful, please cite our paper.
 
 ```bibtex
 @inproceedings{Cai2024SpatialBotPS,

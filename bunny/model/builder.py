@@ -11,7 +11,7 @@ from bunny.model import *
 
 def load_pretrained_model(model_path, model_base, model_name, model_type, load_8bit=False, load_4bit=False,
                           device_map="auto", device="cuda", **kwargs):
-    if model_type not in {'phi-1.5', 'phi-2','phi-3', 'stablelm-2', 'qwen1.5-1.8b','qwen1.5-0.5b','gemma','llama3-8b'}:
+    if model_type not in { 'phi-2','phi-3', 'qwen1.5-1.8b','qwen1.5-0.5b','llama3-8b'}:
         raise ValueError(f"Unknown Model Type {model_type}")
 
     kwargs = {"device_map": device_map, **kwargs}
@@ -40,7 +40,7 @@ def load_pretrained_model(model_path, model_base, model_name, model_type, load_8
         lora_cfg_pretrained = AutoConfig.from_pretrained(model_path)
 
         print('Loading Bunny from base model...')
-        if model_type == 'phi-1.5' or model_type == 'phi-2':
+        if model_type == 'phi-2':
             tokenizer = AutoTokenizer.from_pretrained(model_base, use_fast=True)
             model = BunnyPhiForCausalLM.from_pretrained(model_base, low_cpu_mem_usage=True,
                                                         config=lora_cfg_pretrained, **kwargs)
@@ -54,14 +54,6 @@ def load_pretrained_model(model_path, model_base, model_name, model_type, load_8
             lora_cfg_pretrained.vocab_size = 151936 # CWX NOTE eval QWen
             model = BunnyQwen2ForCausalLM.from_pretrained(model_base, low_cpu_mem_usage=True, config=lora_cfg_pretrained,
                                                          **kwargs)
-        elif model_type == 'stablelm-2':
-            tokenizer = AutoTokenizer.from_pretrained(model_base, use_fast=True, trust_remote_code=True)
-            model = BunnyStableLMForCausalLM.from_pretrained(model_base, low_cpu_mem_usage=True,
-                                                             config=lora_cfg_pretrained, **kwargs)
-        elif model_type =='gemma':
-            tokenizer = GemmaTokenizer.from_pretrained(model_base, use_fast=True)
-            model = BunnyGemmaForCausalLM.from_pretrained(model_base, low_cpu_mem_usage=True,
-                                                          config=lora_cfg_pretrained, **kwargs)
         elif model_type == 'llama3-8b':
             tokenizer = AutoTokenizer.from_pretrained(model_base, use_fast=True)
             model = BunnyLlamaForCausalLM.from_pretrained(model_base, low_cpu_mem_usage=True,
@@ -110,7 +102,7 @@ def load_pretrained_model(model_path, model_base, model_name, model_type, load_8
         print('Loading Bunny from base model...')
 
         cfg_pretrained = AutoConfig.from_pretrained(model_path)
-        if model_type == 'phi-1.5' or model_type == 'phi-2':
+        if model_type == 'phi-2':
             tokenizer = AutoTokenizer.from_pretrained(model_base, use_fast=True)
             model = BunnyPhiForCausalLM.from_pretrained(model_base, low_cpu_mem_usage=True,
                                                         config=cfg_pretrained, **kwargs)
@@ -122,14 +114,6 @@ def load_pretrained_model(model_path, model_base, model_name, model_type, load_8
             tokenizer = Qwen2Tokenizer.from_pretrained(model_base, use_fast=True)
             model = BunnyQwen2ForCausalLM.from_pretrained(model_base, low_cpu_mem_usage=True, config=cfg_pretrained,
                                                          **kwargs)
-        elif model_type == 'stablelm-2':
-            tokenizer = AutoTokenizer.from_pretrained(model_base, use_fast=True, trust_remote_code=True)
-            model = BunnyStableLMForCausalLM.from_pretrained(model_base, low_cpu_mem_usage=True,
-                                                             config=cfg_pretrained, **kwargs)
-        elif model_type =='gemma':
-            tokenizer = GemmaTokenizer.from_pretrained(model_base, use_fast=True)
-            model = BunnyGemmaForCausalLM.from_pretrained(model_base, low_cpu_mem_usage=True,
-                                                          config=cfg_pretrained, **kwargs)
         elif model_type == 'llama3-8b':
             tokenizer = AutoTokenizer.from_pretrained(model_base, use_fast=True)
             model = BunnyLlamaForCausalLM.from_pretrained(model_base, low_cpu_mem_usage=True, config=cfg_pretrained,
@@ -140,7 +124,7 @@ def load_pretrained_model(model_path, model_base, model_name, model_type, load_8
         mm_projector_weights = {k: v.to(torch.float16) for k, v in mm_projector_weights.items()}
         model.load_state_dict(mm_projector_weights, strict=False)
     else:
-        if model_type == 'phi-1.5' or model_type == 'phi-2':
+        if model_type == 'phi-2':
             tokenizer = AutoTokenizer.from_pretrained(model_path, use_fast=True)
             model = BunnyPhiForCausalLM.from_pretrained(model_path, low_cpu_mem_usage=True, **kwargs)
         elif model_type == 'phi-3':
@@ -149,12 +133,6 @@ def load_pretrained_model(model_path, model_base, model_name, model_type, load_8
         elif model_type =='qwen1.5-0.5b' or model_type == 'qwen1.5-1.8b':
             tokenizer = AutoTokenizer.from_pretrained(model_path, use_fast=True)
             model = BunnyQwenForCausalLM.from_pretrained(model_path, low_cpu_mem_usage=True, **kwargs)
-        elif model_type == 'stablelm-2':
-            tokenizer = Qwen2Tokenizer.from_pretrained(model_path, use_fast=True)
-            model = BunnyQwen2ForCausalLM.from_pretrained(model_path, low_cpu_mem_usage=True, **kwargs)
-        elif model_type =='gemma':
-            tokenizer = GemmaTokenizer.from_pretrained(model_path, use_fast=True)
-            model = BunnyGemmaForCausalLM.from_pretrained(model_path, low_cpu_mem_usage=True, **kwargs)
         elif model_type == 'llama3-8b':
             tokenizer = AutoTokenizer.from_pretrained(model_path, use_fast=True)
             model = BunnyLlamaForCausalLM.from_pretrained(model_path, low_cpu_mem_usage=True, **kwargs)
