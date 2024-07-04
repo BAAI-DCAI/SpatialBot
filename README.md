@@ -18,6 +18,29 @@ SpatialQA dataset, SpatialBench benchmark, and SpatialBot models and checkpoints
 
 [comment]: <> (Please refer to [Bunny]&#40;https://github.com/BAAI-DCAI/Bunny?tab=readme-ov-file#install&#41; to install locally, or start from docker image: `docker pull russellrobin/bunny:latest`)
 
+## Model Installation
+SpatialBot is a multi-image version of [Bunny](https://github.com/BAAI-DCAI/Bunny). 
+If you've installed Bunny, just replace the code with ours are reinstall ```bunny``` package.
+You can start from a docker or configure local environments.
+
+### Start from Docker
+We provide a ready to run environment. Just update it with our codes:
+```
+# 1. download docker image
+docker pull russellrobin/bunny:latest
+
+# 2. run container
+# docker run -itd ...
+# docker exec -it ...
+
+# 3. upgrade transformers and bunny package
+cd SpatialBot && pip install --upgrade transformers && pip uninstall bunny && pip install -e .
+```
+
+### Local Installation
+Follow instructions [here](https://github.com/BAAI-DCAI/Bunny?tab=readme-ov-file#local-installation), but use codes from this repo.
+
+
 ## 🔗 Citation
 If you find this repository helpful, please cite the paper below.
 
