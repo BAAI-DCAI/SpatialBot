@@ -25,7 +25,7 @@ SpatialQA finetuning json file will be available soon.
 
 ### Prepare your own RGB-D data
 We recommend using depth information from sensors if possible.
-Follow [instructions](https://github.com/BAAI-DCAI/SpatialBot/SpatialQA_depthmap_instruction/SpatialQA_depthmap_instruction.md) to prepare estimated depth information on your own RGB images.
+Follow [instructions](https://github.com/BAAI-DCAI/SpatialBot/blob/main/SpatialQA_depthmap_instruction/SpatialQA_depthmap_instruction.md) to prepare estimated depth information on your own RGB images.
 
 ## SpatialBot Installation
 SpatialBot is a multi-image version of [Bunny](https://github.com/BAAI-DCAI/Bunny). 
