@@ -9,7 +9,6 @@ python -m bunny.eval.eval_spatialqa \
     --model-base $MODEL_BASE\
     --model-type $MODEL_TYPE\
     --data-path ./eval/spatialqa_bench \
-    --output-path ur5_eval.json\
     --conv-mode bunny \
     --question existence.json \
     --depth

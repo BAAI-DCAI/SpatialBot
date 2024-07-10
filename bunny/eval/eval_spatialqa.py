@@ -86,8 +86,6 @@ def main():
     parser.add_argument('--model-base', type=str, default=None)
     parser.add_argument("--model-type", type=str, default=None)
     parser.add_argument('--data-path', type=str, default=None)
-    parser.add_argument('--output-path', type=str, default=None)
-
     parser.add_argument('--split', type=str, default='validation')
     parser.add_argument('--seed', type=int, default=42)
     parser.add_argument("--conv-mode", type=str, default='bunny')

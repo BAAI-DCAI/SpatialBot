@@ -61,6 +61,7 @@ sh script/train/finetune_lora.sh
 ```
 
 Parameters:
+
 ```MODEL_TYPE```: base LLM type, we support ```phi-2, phi-3,qwen1.5-0.5b, qwen1.5-1.8b (4B), and llama3-8b```.
 
 ```PRETRAIN_DIR ```: path to a pretrained model.
@@ -77,6 +78,12 @@ Our pretrained model can be found [here](https://github.com/BAAI-DCAI/Bunny?tab=
 Finetuned SpatialBot is available soon!
 
 ## 🏆 SpatialBench
+Please download [SpatialBench](https://huggingface.co/datasets/RussRobin/SpatialBench) and
+put them under ```./eval/spatialqa_bench```.
+Use our [script](https://github.com/BAAI-DCAI/SpatialBot/blob/main/script/eval/lora/spatial_bench.sh) to evaluate on it.
+
+Parameters:
+```--depth```: use this parameter is evaluating model with RGB-Depth input. Otherwise, RGB only. 
 
 ## 📃 SpatialBot Evaluation
 Follow our [instructions](https://github.com/BAAI-DCAI/SpatialBot/blob/main/script/eval/lora/evaluation_lora.md) to prepare data and evaluate SpatialBot on SpatialBench and general VLM benchmarks.
