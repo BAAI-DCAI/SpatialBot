@@ -17,7 +17,7 @@ We are working  hard to update this repo and paper, stay tuned!
 ### Image
 We use [LAION-2M](https://huggingface.co/datasets/BoyaWu10/Bunny-v1_0-data/tree/main/pretrain) for pretraining. 
 The finetuning dataset is based on [Bunny_695k](https://huggingface.co/datasets/BoyaWu10/Bunny-v1_0-data/tree/main/finetune). 
-Please download images in Bunny_695k first, and then download [SpatialQA high-level images](https://huggingface.co/datasets/RussRobin/SpatialQA).
+Please download images in Bunny_695k first, and then download [SpatialQA](https://huggingface.co/datasets/RussRobin/SpatialQA).
 
 ### Data json
 Pretrain data json file can be found in [LAION-2M](https://huggingface.co/datasets/BoyaWu10/Bunny-v1_0-data/tree/main/pretrain).
