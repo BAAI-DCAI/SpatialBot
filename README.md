@@ -76,6 +76,7 @@ Parameters:
 Our pretrained model can be found [here](https://github.com/BAAI-DCAI/Bunny?tab=readme-ov-file#model-zoo).
 Finetuned SpatialBot is available soon!
 
+## SpatialBench
 ## 📃 SpatialBot Evaluation
 Follow our [instructions](https://github.com/BAAI-DCAI/SpatialBot/blob/main/script/eval/lora/evaluation_lora.md) to prepare data and evaluate SpatialBot on SpatialBench and general VLM benchmarks.
 
