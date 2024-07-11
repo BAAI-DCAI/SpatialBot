@@ -33,7 +33,7 @@ If you've installed Bunny, just replace the code with ours are reinstall ```bunn
 You can start from a docker or configure local environments.
 
 ### Start from Docker
-We provide a ready to run environment. Just update it with our codes:
+We provide a ready to run environment. Please update it with our codes:
 ```
 # 1. download docker image
 docker pull russellrobin/bunny:latest
@@ -47,10 +47,10 @@ cd SpatialBot && pip install --upgrade transformers && pip uninstall bunny && pi
 ```
 
 ### Local Installation
-Follow instructions [here](https://github.com/BAAI-DCAI/Bunny?tab=readme-ov-file#local-installation), but use codes from this repo.
+Please follow instructions [here](https://github.com/BAAI-DCAI/Bunny?tab=readme-ov-file#local-installation), but use codes from this repo.
 
 ## 🏋 SpatialBot Training
-[Download](https://github.com/BAAI-DCAI/Bunny?tab=readme-ov-file#support-models) the base LLM and vision tower weights first.
+Please [download](https://github.com/BAAI-DCAI/Bunny?tab=readme-ov-file#support-models) the base LLM and vision tower weights first.
 To pretrain the model:
 ```
 sh script/train/pretrain.sh
@@ -86,7 +86,11 @@ Parameters:
 ```--depth```: use this parameter is evaluating model with RGB-Depth input. Otherwise, RGB only. 
 
 ## 📃 SpatialBot Evaluation
-Follow our [instructions](https://github.com/BAAI-DCAI/SpatialBot/blob/main/script/eval/lora/evaluation_lora.md) to prepare data and evaluate SpatialBot on SpatialBench and general VLM benchmarks.
+Please follow our [instructions](https://github.com/BAAI-DCAI/SpatialBot/blob/main/script/eval/lora/evaluation_lora.md) 
+to prepare data and evaluate SpatialBot on SpatialBench and general VLM benchmarks.
+
+Please refer to [embodiment instructions](https://github.com/BAAI-DCAI/SpatialBot/blob/main/script/eval/lora/evaluation_embodiment.md)
+to evaluate model on embodiment tasks.
 
 
 ## 🔗 Usage

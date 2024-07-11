@@ -85,10 +85,7 @@ def main():
     parser.add_argument('--model-path', type=str, default=None)
     parser.add_argument('--model-base', type=str, default=None)
     parser.add_argument("--model-type", type=str, default=None)
-    parser.add_argument('--config-path', type=str, default=None)
     parser.add_argument('--data-path', type=str, default=None)
-    parser.add_argument('--output-path', type=str, default=None)
-
     parser.add_argument('--split', type=str, default='validation')
     parser.add_argument('--seed', type=int, default=42)
     parser.add_argument("--conv-mode", type=str, default='bunny')
@@ -100,12 +97,6 @@ def main():
 
     processor = None
     call_model_engine = call_bunny_engine_df
-    
-    args.config = load_yaml(args.config_path)
-    for key, value in args.config.items():
-        if key != 'eval_params' and type(value) == list:
-            assert len(value) == 1, 'key {} has more than one value'.format(key)
-            args.config[key] = value[0]
 
     model_path = os.path.expanduser(args.model_path)
     model_name = get_model_name_from_path(model_path)

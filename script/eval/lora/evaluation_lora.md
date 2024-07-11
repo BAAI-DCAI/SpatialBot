@@ -1,6 +1,6 @@
 # Evaluation for LoRA tuning models
 
-We recommend trying RGBD o MME, GQA and SpatialBench, as they involve some depth related questions.
+We recommend trying RGBD on MME, GQA and SpatialBench, as they involve some depth related questions.
 
 ## SpatialBench
 (Dataset to be uploaded soon.)
