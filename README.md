@@ -6,6 +6,15 @@
     <a href="https://arxiv.org/abs/2406.13642">
         <img alt="Paper" src="http://img.shields.io/badge/Paper-arXiv%3A2406.13642-B31B1B.svg">
     </a>
+    <a href="https://huggingface.co/datasets/RussRobin/SpatialQA">
+        <img alt="Dataset" src="https://img.shields.io/badge/🤗%20Dataset-SpatialQA-yellow">
+    </a>
+    <a href="https://huggingface.co/RussRobin/SpatialBot">
+        <img alt="Model SpatialBot" src="https://img.shields.io/badge/🤗%20Model-SpatialBot-green">
+    </a>
+    <a href="https://huggingface.co/datasets/RussRobin/SpatialBench/blob/main/README.md">
+        <img alt="Benchmark" src="https://img.shields.io/badge/🤗%20Benchmark-SpatialBench-blue">
+    </a>
 </p>
 
 This is the official repo for "SpatialBot: Precise Spatial Understanding with Vision Language Models".
@@ -25,7 +34,7 @@ SpatialQA finetuning json file will be available soon.
 
 ### Prepare your own RGB-D data
 We recommend using depth information from sensors if possible.
-Follow [instructions](https://github.com/BAAI-DCAI/SpatialBot/blob/main/SpatialQA_depthmap_instruction/SpatialQA_depthmap_instruction.md) to prepare estimated depth information on your own RGB images.
+Follow [depthmap instructions](https://github.com/BAAI-DCAI/SpatialBot/blob/main/SpatialQA_depthmap_instruction/SpatialQA_depthmap_instruction.md) to prepare estimated depth information on your own RGB images.
 
 ## 🤖 SpatialBot Installation
 SpatialBot is a multi-image version of [Bunny](https://github.com/BAAI-DCAI/Bunny). 
@@ -74,8 +83,9 @@ Parameters:
 
 ```--version```: for Phi-2 and QWen, use ```bunny```. For ```Phi-3/Llama3```, please use ```phi3/llama```
 
-Our pretrained model can be found [here](https://github.com/BAAI-DCAI/Bunny?tab=readme-ov-file#model-zoo).
-Finetuned SpatialBot is available soon!
+Please find ckpts of SpatialBot [here](https://huggingface.co/RussRobin/SpatialBot).
+Pretrained models can be found [here](https://github.com/BAAI-DCAI/Bunny?tab=readme-ov-file#model-zoo).
+
 
 ## 🏆 SpatialBench
 Please download [SpatialBench](https://huggingface.co/datasets/RussRobin/SpatialBench) and
