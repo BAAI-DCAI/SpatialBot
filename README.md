@@ -40,7 +40,7 @@ If you've installed Bunny, just replace the code with ours are reinstall ```bunn
 You can start from a docker or configure local environments.
 
 ### Start from Docker
-We provide a ready to run environment. Please update it with our codes:
+We provide a ready to run [docker container](https://hub.docker.com/r/russellrobin/bunny). Please update it with our codes:
 ```
 # 1. download docker image
 docker pull russellrobin/bunny:latest
