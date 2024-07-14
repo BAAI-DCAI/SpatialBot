@@ -30,7 +30,7 @@ Please download images in Bunny_695k first, and then download [SpatialQA](https:
 Pretrain data json file can be found in [LAION-2M](https://huggingface.co/datasets/BoyaWu10/Bunny-v1_0-data/tree/main/pretrain).
 [SpatialQA](https://huggingface.co/datasets/RussRobin/SpatialQA) is used in finetuning.
 
-### Prepare your own RGB-D data
+### Prepare your own RGBD data
 We recommend using depth information from sensors if possible.
 Follow [depthmap instructions](https://github.com/BAAI-DCAI/SpatialBot/blob/main/SpatialQA_depthmap_instruction/SpatialQA_depthmap_instruction.md) to prepare estimated depth information on your own RGB images.
 
@@ -54,7 +54,7 @@ cd SpatialBot && pip install --upgrade transformers && pip uninstall bunny && pi
 ```
 
 ### Local Installation
-Please follow instructions [here](https://github.com/BAAI-DCAI/Bunny?tab=readme-ov-file#local-installation), but use codes from this repo.
+Please follow the [instructions](https://github.com/BAAI-DCAI/Bunny?tab=readme-ov-file#local-installation), but use codes in this repo.
 
 ## 🏋 SpatialBot Training
 Please [download](https://github.com/BAAI-DCAI/Bunny?tab=readme-ov-file#support-models) the base LLM and vision tower weights first.
@@ -81,20 +81,20 @@ Parameters:
 
 ```--version```: for Phi-2 and QWen, use ```bunny```. For ```Phi-3/Llama3```, please use ```phi3/llama```
 
-Please find ckpts of SpatialBot-3B [here](https://huggingface.co/RussRobin/SpatialBot), which is based on Phi-2 and SigLIP.
-Pretrained models can be found [here](https://github.com/BAAI-DCAI/Bunny?tab=readme-ov-file#model-zoo).
+Please find ckpts of [SpatialBot-3B](https://huggingface.co/RussRobin/SpatialBot) in HF, which is based on Phi-2 and SigLIP.
+Pretrained models can be found in [Model Zoo](https://github.com/BAAI-DCAI/Bunny?tab=readme-ov-file#model-zoo).
 
 
 ## 🏆 SpatialBench
 Please download [SpatialBench](https://huggingface.co/datasets/RussRobin/SpatialBench) and
 put them under ```./eval/spatialqa_bench```.
-Use our [script](https://github.com/BAAI-DCAI/SpatialBot/blob/main/script/eval/lora/spatial_bench.sh) to evaluate on it.
+Use our [SpatialBench script](https://github.com/BAAI-DCAI/SpatialBot/blob/main/script/eval/lora/spatial_bench.sh) to evaluate on it.
 
 Parameters:
 ```--depth```: use this parameter is evaluating model with RGB-Depth input. Otherwise, RGB only. 
 
 ## 📃 SpatialBot Evaluation
-Please follow our [instructions](https://github.com/BAAI-DCAI/SpatialBot/blob/main/script/eval/lora/evaluation_lora.md) 
+Please follow our [general instructions](https://github.com/BAAI-DCAI/SpatialBot/blob/main/script/eval/lora/evaluation_lora.md) 
 to prepare data and evaluate SpatialBot on SpatialBench and general VLM benchmarks.
 
 Please refer to [embodiment instructions](https://github.com/BAAI-DCAI/SpatialBot/blob/main/script/eval/lora/evaluation_embodiment.md)
