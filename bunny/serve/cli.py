@@ -17,9 +17,9 @@ from bunny.util.mm_utils import process_images, tokenizer_image_token, get_model
 def load_image(image_file):
     if image_file.startswith('http://') or image_file.startswith('https://'):
         response = requests.get(image_file)
-        image = Image.open(BytesIO(response.content)).convert('RGB') # CWX NOTE
+        image = Image.open(BytesIO(response.content)).convert('RGB')
     else:
-        image = Image.open(image_file).convert('RGB') # CWX NOTE
+        image = Image.open(image_file).convert('RGB')
     return image
 
 
@@ -46,10 +46,7 @@ def main(args):
     roles = conv.roles
 
     image = load_image(args.image_file)
-    print('image',image.size,image.mode)
-    # Similar operation in model_worker.py
     image_tensor = process_images([image], image_processor, model.config)
-    print('image_tensor',image_tensor.shape)
     if type(image_tensor) is list:
         image_tensor = [image.to(model.device, dtype=model.dtype) for image in image_tensor]
     else:

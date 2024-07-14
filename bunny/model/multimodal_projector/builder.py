@@ -22,22 +22,15 @@ class IdentityMap(nn.Module):
 class Minigpt(nn.Module):
     def __init__(self, config=None):
         super(Minigpt, self).__init__()
-        # c*4 is the input size, and c is the output size for the linear layer
         inc, ouc = config.mm_hidden_size, config.hidden_size
         self.linear = nn.Linear(inc * 4, ouc)
 
     def forward(self, x):
-        # x is the input tensor with shape [b, num_tokens, c]
         b, num_tokens, c = x.shape
-
-        # Check if num_tokens is divisible by 4
         if num_tokens % 4 != 0:
             raise ValueError("num_tokens must be divisible by 4")
 
-        # Reshape x to [b, num_tokens/4, c*4]
         x = x.view(b, num_tokens // 4, c * 4)
-
-        # Apply the linear transformation
         x = self.linear(x)
         return x
 
@@ -45,27 +38,17 @@ class Minigpt(nn.Module):
 class Vanilla(nn.Module):
     def __init__(self, config=None):
         super(Vanilla, self).__init__()
-        # c*4 is the input size, and c is the output size for the linear layer
         inc, ouc = config.mm_hidden_size, config.hidden_size
         self.linear = nn.Linear(inc * 4, ouc)
 
     def forward(self, x):
         b, num_tokens, c = x.shape
 
-        # Check if num_tokens is divisible by 4
         if num_tokens % 4 != 0:
             raise ValueError("num_tokens must be divisible by 4")
-
-        # First, reshape to [b, num_tokens//4, 4, c]
         x = x.view(b, num_tokens // 4, 4, c)
-
-        # Then, permute to interleave the tokens
         x = x.permute(0, 1, 3, 2).contiguous()
-
-        # Finally, reshape to [b, num_tokens//4, c*4] to interleave features of 4 tokens
         x = x.view(b, num_tokens // 4, c * 4)
-
-        # Apply the linear transformation
         x = self.linear(x)
         return x
 
@@ -162,9 +145,6 @@ def build_vision_projector(config, delay_load=False, **kwargs):
             mlp_depth = int(mlp_gelu_match.group(1))
             
             modules = [nn.Linear(config.mm_hidden_size, config.hidden_size)]
-            # CWX NOTE AutoResExp5
-            # modules = [nn.Linear(config.mm_hidden_size*2, config.hidden_size)]
-
             for _ in range(1, mlp_depth):
                 modules.append(nn.GELU())
                 modules.append(nn.Linear(config.hidden_size, config.hidden_size))

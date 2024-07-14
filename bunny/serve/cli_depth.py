@@ -22,18 +22,18 @@ def load_image(image_file,depth_file):
         width, height = depth_img.size
         img = np.array(depth_img)
         three_channel_array = np.zeros((height, width, 3), dtype=np.uint8)
-        three_channel_array[:, :, 0] = (img // 1024) * 4 # R 第一位
-        three_channel_array[:, :, 1] = (img // 32) * 8 # G 第二位
-        three_channel_array[:, :, 2] = (img % 32) * 8 # B 第三位
+        three_channel_array[:, :, 0] = (img // 1024) * 4
+        three_channel_array[:, :, 1] = (img // 32) * 8
+        three_channel_array[:, :, 2] = (img % 32) * 8
         depth_img = Image.fromarray(three_channel_array, 'RGB')
 
         image = [Image.open(image_file).convert('RGB'),depth_img]
     else:
         if image_file.startswith('http://') or image_file.startswith('https://'):
             response = requests.get(image_file)
-            image = Image.open(BytesIO(response.content)).convert('RGB') # CWX NOTE
+            image = Image.open(BytesIO(response.content)).convert('RGB')
         else:
-            image = Image.open(image_file).convert('RGB') # CWX NOTE
+            image = Image.open(image_file).convert('RGB')
     return image
 
 

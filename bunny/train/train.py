@@ -235,7 +235,6 @@ def train():
             trust_remote_code=True
         )
     elif model_args.model_type == 'qwen1.5-0.5b' or model_args.model_type == 'qwen1.5-1.8b':
-        # from transformers import Qwen2Tokenizer
         tokenizer = Qwen2Tokenizer.from_pretrained(
             model_args.model_name_or_path,
             cache_dir=training_args.cache_dir,
@@ -407,14 +406,6 @@ def train():
     if training_args.freeze_mm_mlp_adapter:
         for p in model.get_model().mm_projector.parameters():
             p.requires_grad = False
-
-    # # CWX NOTE ur5-3: unfreeze projector
-    # for p in model.get_model().mm_projector.parameters():
-    #     p.requires_grad = True
-        
-    # # CWX NOTE: ur5: 打开vision encoder
-    # for p in model.get_model().vision_tower.parameters():
-    #     p.requires_grad = True
 
     if training_args.bits in [4, 8]:
         model.get_model().mm_projector.to(dtype=compute_dtype, device=training_args.device)

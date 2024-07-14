@@ -39,8 +39,6 @@ def call_bunny_engine_df(args, sample, model, tokenizer=None, processor=None):
         output_ids = model.generate(
             input_ids,
             images = sample['image'],
-            # images=[image1, image2],
-            # images=[image1],
             do_sample=False,
             temperature=0,
             top_p=None,
@@ -101,7 +99,6 @@ def process_answer(response,dataset):
     else:
         raise NotImplementedError
 
-    print('processed answer: ', response_)
     return response_
 
 def main():
@@ -138,11 +135,9 @@ def main():
 
     img_buffer = deque(maxlen=args.buffer_len)
 
-    print('bunny waiting for image from ros...')
+    print('SpatialBot waiting for image...')
     while True:
         if os.path.exists(args.image_path):
-            print('bunny gets ros image')
-            cur_time = time.time()
             try:
                 image = Image.open(args.image_path).convert('RGB')
             except:
@@ -167,21 +162,19 @@ def main():
                         time.sleep(0.05)
                 else:
                     time.sleep(0.1)
-            question =  '<image 1>\n<image 2>\n<image 3>\n<image 4>\nInstruct the robot to '+ str(goal[0])+'\nAnswer with robot parameters.'
-            print('question: ',question.split('\n')[-2])
+
+            question = ''.join([f'<image {j}>\n' for j in range(1, args.buffer_len+1)])+'Instruct the robot to '+str(goal[0])+'\nAnswer with robot parameters.'
             sample = {'question':question, 'image':img_list_converted} 
 
             with torch.no_grad():
                 answer = call_model_engine(args, sample, model, tokenizer, processor)
-                print('answer',answer)
                 with open(args.answer_path, "w", encoding="utf-8") as f:
                     json.dump(answer, f)
                 try:
                     os.remove(args.image_path)
                 except OSError as e:
-                    print("ros图片删除失败:", e)
+                    print("failed to delete input image:", e)
                     raise OSError
-            print('bunny finishes, in ', time.time()-cur_time,', and waiting for another ros image...')
             time.sleep(0.1)
         else:
             time.sleep(0.5)

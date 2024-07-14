@@ -121,7 +121,7 @@ def main():
                 data['image'].append(Image.open(depth_path))
         
         if 'id' not in data.keys():
-            data['id'] = idx #  CWX NOTE counting, 等的json目前还没有id
+            data['id'] = idx
 
         if str(data['id']).split('_')[0] == 'grounding':
             idx_2 = 0
@@ -148,7 +148,7 @@ def main():
             responses.append({'response':response,'gt':sample['answer']})
             j = j+1
 
-    if args.question.strip() in ['reach_pos_neg.json','size_pos_neg.json']:
+    if args.question.strip() in ['reach.json','size.json']:
         scores = 0
         full_scores = 0
         for j in range(len(responses)):

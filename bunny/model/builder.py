@@ -50,8 +50,7 @@ def load_pretrained_model(model_path, model_base, model_name, model_type, load_8
                                                          config=lora_cfg_pretrained, **kwargs)
         elif model_type =='qwen1.5-0.5b' or model_type == 'qwen1.5-1.8b':
             tokenizer = Qwen2Tokenizer.from_pretrained(model_base, use_fast=True)
-            # lora_cfg_pretrained.vocab_size = 151646 # CWX NOTE train QWen
-            lora_cfg_pretrained.vocab_size = 151936 # CWX NOTE eval QWen
+            lora_cfg_pretrained.vocab_size = 151936
             model = BunnyQwen2ForCausalLM.from_pretrained(model_base, low_cpu_mem_usage=True, config=lora_cfg_pretrained,
                                                          **kwargs)
         elif model_type == 'llama3-8b':
@@ -73,7 +72,6 @@ def load_pretrained_model(model_path, model_base, model_name, model_type, load_8
             non_lora_trainables = torch.load(os.path.join(model_path, 'non_lora_trainables.bin'), map_location='cpu')
 
         else:
-            # this is probably from HF Hub
             from huggingface_hub import hf_hub_download
             def load_from_hf(repo_id, filename, subfolder=None):
                 cache_file = hf_hub_download(
@@ -98,7 +96,6 @@ def load_pretrained_model(model_path, model_base, model_name, model_type, load_8
         model = model.merge_and_unload()
         print('Model is loaded...')
     elif model_base is not None:
-        # this may be mm projector only
         print('Loading Bunny from base model...')
 
         cfg_pretrained = AutoConfig.from_pretrained(model_path)
