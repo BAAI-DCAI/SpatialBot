@@ -9,17 +9,15 @@
     <a href="https://huggingface.co/datasets/RussRobin/SpatialQA">
         <img alt="Dataset" src="https://img.shields.io/badge/🤗%20Dataset-SpatialQA-yellow">
     </a>
-    <a href="https://huggingface.co/RussRobin/SpatialBot">
-        <img alt="Model SpatialBot" src="https://img.shields.io/badge/🤗%20Model-SpatialBot-green">
+    <a href="https://huggingface.co/RussRobin/SpatialBot-3B">
+        <img alt="Model SpatialBot-3B" src="https://img.shields.io/badge/🤗%20Model-SpatialBot--3B-green">
     </a>
-    <a href="https://huggingface.co/datasets/RussRobin/SpatialBench/blob/main/README.md">
+    <a href="https://huggingface.co/datasets/RussRobin/SpatialBench">
         <img alt="Benchmark" src="https://img.shields.io/badge/🤗%20Benchmark-SpatialBench-blue">
     </a>
 </p>
 
 This is the official repo for "SpatialBot: Precise Spatial Understanding with Vision Language Models".
-
-We are working  hard to update this repo and paper, stay tuned!
 
 ## 📊 SpatialQA Dataset
 
@@ -30,7 +28,7 @@ Please download images in Bunny_695k first, and then download [SpatialQA](https:
 
 ### Data json
 Pretrain data json file can be found in [LAION-2M](https://huggingface.co/datasets/BoyaWu10/Bunny-v1_0-data/tree/main/pretrain).
-SpatialQA finetuning json file will be available soon.
+[SpatialQA](https://huggingface.co/datasets/RussRobin/SpatialQA) is used in finetuning.
 
 ### Prepare your own RGB-D data
 We recommend using depth information from sensors if possible.
@@ -83,7 +81,7 @@ Parameters:
 
 ```--version```: for Phi-2 and QWen, use ```bunny```. For ```Phi-3/Llama3```, please use ```phi3/llama```
 
-Please find ckpts of SpatialBot [here](https://huggingface.co/RussRobin/SpatialBot).
+Please find ckpts of SpatialBot-3B [here](https://huggingface.co/RussRobin/SpatialBot), which is based on Phi-2 and SigLIP.
 Pretrained models can be found [here](https://github.com/BAAI-DCAI/Bunny?tab=readme-ov-file#model-zoo).
 
 
