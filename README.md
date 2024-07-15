@@ -29,6 +29,7 @@ Please download images in Bunny_695k first, and then download [SpatialQA](https:
 ### Data json
 Pretrain data json file can be found in [LAION-2M](https://huggingface.co/datasets/BoyaWu10/Bunny-v1_0-data/tree/main/pretrain).
 [SpatialQA](https://huggingface.co/datasets/RussRobin/SpatialQA) is used in finetuning.
+We refine 42k VG bounding boxes of COCO images, you can download them seperately: [COCO refined bounding box](https://huggingface.co/datasets/RussRobin/RefinedCOCOBoundingBox).
 
 ### Prepare your own RGBD data
 We recommend using depth information from sensors if possible.
