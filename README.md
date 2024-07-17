@@ -19,6 +19,8 @@
 
 This is the official repo for "SpatialBot: Precise Spatial Understanding with Vision Language Models".
 
+<!-- ![comparison_8B](comparison_8B.png) -->
+
 ## 📊 SpatialQA Dataset
 
 ### Image
@@ -71,9 +73,9 @@ Parameters:
 
 ```MODEL_TYPE```: base LLM type, we support ```phi-2, phi-3,qwen1.5-0.5b, qwen1.5-1.8b (4B), and llama3-8b```.
 
-```PRETRAIN_DIR ```: path to a pretrained model.
+```PRETRAIN_DIR```: path to a pretrained model.
 
-```OUTPUT_DIR ```: path to save model.
+```OUTPUT_DIR```: path to save model.
 
 ```--model_name_or_path```: path to base LLM. 
 
