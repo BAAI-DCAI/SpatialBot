@@ -21,7 +21,7 @@ This is the official repo for "SpatialBot: Precise Spatial Understanding with Vi
 
 <!-- ![comparison_8B](comparison_8B.png) -->
 
-## Quickstart
+## 🚀 Quickstart
 1. Install dependencies first:
 
 ```
