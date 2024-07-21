@@ -18,6 +18,7 @@
 </p>
 
 This is the official repo for "SpatialBot: Precise Spatial Understanding with Vision Language Models".
+
 SJTU, Stanford, BAAI, PKU, Oxford, SEU
 
 <!-- ![comparison_8B](comparison_8B.png) -->
