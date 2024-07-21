@@ -19,6 +19,8 @@
 
 This is the official repo for "SpatialBot: Precise Spatial Understanding with Vision Language Models".
 
+<!-- ![comparison_8B](comparison_8B.png) -->
+
 ## 📊 SpatialQA Dataset
 
 ### Image
@@ -71,9 +73,9 @@ Parameters:
 
 ```MODEL_TYPE```: base LLM type, we support ```phi-2, phi-3,qwen1.5-0.5b, qwen1.5-1.8b (4B), and llama3-8b```.
 
-```PRETRAIN_DIR ```: path to a pretrained model.
+```PRETRAIN_DIR```: path to a pretrained model.
 
-```OUTPUT_DIR ```: path to save model.
+```OUTPUT_DIR```: path to save model.
 
 ```--model_name_or_path```: path to base LLM. 
 
@@ -81,7 +83,8 @@ Parameters:
 
 ```--version```: for Phi-2 and QWen, use ```bunny```. For ```Phi-3/Llama3```, please use ```phi3/llama```
 
-Please find ckpts of [SpatialBot-3B](https://huggingface.co/RussRobin/SpatialBot) in HF, which is based on Phi-2 and SigLIP.
+Please find finetuned ckpts of [SpatialBot-3B-LoRA](https://huggingface.co/RussRobin/SpatialBot-3B-LoRA) in HF, which is based on Phi-2 and SigLIP.
+Merged model is available at [SpatialBot-3B](https://huggingface.co/RussRobin/SpatialBot-3B).
 Pretrained models can be found in [Model Zoo](https://github.com/BAAI-DCAI/Bunny?tab=readme-ov-file#model-zoo).
 
 
@@ -100,6 +103,27 @@ to prepare data and evaluate SpatialBot on SpatialBench and general VLM benchmar
 Please refer to [embodiment instructions](https://github.com/BAAI-DCAI/SpatialBot/blob/main/script/eval/lora/evaluation_embodiment.md)
 to evaluate model on embodiment tasks.
 
+## CLI Inference
+RGBD inference:
+```ssh
+python -m bunny.serve.cli_depth \
+	--model-path /path/to/bunny_lora_weights \
+	--model-base /path/to/base_llm_model \
+	--model-type phi-2 \ # NOTE: or phi-3/llama3-8b/qwen1.5-1.8b
+	--conv-mode bunny \ # NOTE: or phi3/llama. bunny is for Phi-2 and QWen1.5
+	--image-file /path/to/the/test/rgb/image \
+	--depth-file /path/to/the/test/depth/image
+```
+
+RGB inference:
+```ssh
+python -m bunny.serve.cli \
+	--model-path /path/to/bunny_lora_weights \
+	--model-base /path/to/base_llm_model \
+	--model-type phi-2 \ # NOTE: or phi-3/llama3-8b/qwen1.5-1.8b
+	--conv-mode bunny \ # NOTE: or phi3/llama. bunny is for Phi-2 and QWen1.5
+	--image-file /path/to/the/test/rgb/image \
+```
 
 ## 🔗 Usage
 If you find this repository helpful, please cite our paper.
