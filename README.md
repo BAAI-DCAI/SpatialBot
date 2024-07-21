@@ -30,8 +30,8 @@ pip install torch transformers accelerate pillow numpy
 
 2. Download [SpatialBot-3B](https://huggingface.co/RussRobin/SpatialBot-3B). 
 Users in mainland China may want to download HF model from [HF mirror site](https://hf-mirror.com/) and chaneg ```model_name ``` to local path of SpatialBot-3B folder.
-3. 
-4. Run the model:
+
+3. Run the model:
 ```
 import torch
 import transformers
