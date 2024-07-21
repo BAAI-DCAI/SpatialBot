@@ -167,7 +167,7 @@ Pretrained models can be found in [Model Zoo](https://github.com/BAAI-DCAI/Bunny
 
 ## 🏆 SpatialBench
 Please download [SpatialBench](https://huggingface.co/datasets/RussRobin/SpatialBench) and
-put them under ```./eval/spatialqa_bench```.
+put them under ```./eval/spatial_bench```.
 Use our [SpatialBench script](https://github.com/BAAI-DCAI/SpatialBot/blob/main/script/eval/lora/spatial_bench.sh) to evaluate on it.
 
 Parameters:

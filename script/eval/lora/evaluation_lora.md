@@ -3,8 +3,8 @@
 We recommend trying RGBD on MME, GQA and SpatialBench, as they involve some depth related questions.
 
 ## SpatialBench
-1. Download [SpatialBench](https://huggingface.co/datasets/RussRobin/SpatialBench) and put them under ```./eval/spatialqa_bench```.
-2. The script uses RGBD by default. To test with RGB, comment out ```--depth``` in it.
+1. Download [SpatialBench](https://huggingface.co/datasets/RussRobin/SpatialBench) and put them under ```./eval/spatial_bench```.
+2. The [script](https://github.com/BAAI-DCAI/SpatialBot/blob/main/bunny/eval/eval_spatialbench.py) uses RGBD by default. To test with RGB, comment out ```--depth``` in it.
 ```shell
 sh script/eval/lora/spatial_bench.sh
 ```
