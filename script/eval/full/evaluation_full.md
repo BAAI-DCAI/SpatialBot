@@ -1,6 +1,8 @@
 # Evaluation for full-parameter tuning models
 
-**Please change `conv-mode` to `minicpm/phi3/llama` for `MODEL_TYPE = minicpm/phi-3/llama3-8b`.**
+We recommend trying RGBD on MME and SpatialBench, as they involve some depth related questions.
+
+**Please change `conv-mode` to `minicpm/phi3/llama` for `MODEL_TYPE = phi-3/llama3-8b/qwen1.5-0.5b/qwen1.5-1.8b`.**
 
 ## SpatialBench
 1. Download [SpatialBench](https://huggingface.co/datasets/RussRobin/SpatialBench) and put them under ```./eval/spatial_bench```.
