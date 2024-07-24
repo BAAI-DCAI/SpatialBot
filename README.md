@@ -31,7 +31,7 @@ pip install torch transformers accelerate pillow numpy
 ```
 
 2. Download [SpatialBot-3B](https://huggingface.co/RussRobin/SpatialBot-3B). 
-Users in mainland China may want to download HF model from [HF mirror site](https://hf-mirror.com/) and chaneg ```model_name ``` to local path of SpatialBot-3B folder.
+Users in mainland China may want to download HF model from [HF mirror site](https://hf-mirror.com/) and change ```model_name ``` to local path of SpatialBot-3B folder.
 
 3. Run the model:
 ```
@@ -174,12 +174,14 @@ Parameters:
 ```--depth```: use this parameter is evaluating model with RGB-Depth input. Otherwise, RGB only. 
 
 ## 📃 SpatialBot Evaluation
-Please follow our [general instructions](https://github.com/BAAI-DCAI/SpatialBot/blob/main/script/eval/lora/evaluation_lora.md) 
+Please follow our [general instructions LoRA](https://github.com/BAAI-DCAI/SpatialBot/blob/main/script/eval/lora/evaluation_lora.md),
+or [general instructions Full-parameter](https://github.com/BAAI-DCAI/SpatialBot/blob/main/script/eval/full/evaluation_full.md)
 to prepare data and evaluate SpatialBot on SpatialBench and general VLM benchmarks.
 
 Please refer to [embodiment instructions](https://github.com/BAAI-DCAI/SpatialBot/blob/main/script/eval/lora/evaluation_embodiment.md)
 to evaluate model on embodiment tasks.
 
+To merge LoRA tuning models, see [merge instructions](https://github.com/BAAI-DCAI/SpatialBot/blob/main/script/merge_instruction.md)
 ## CLI Inference
 RGBD inference:
 ```
