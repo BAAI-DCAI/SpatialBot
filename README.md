@@ -6,9 +6,6 @@
     <a href="https://arxiv.org/abs/2406.13642">
         <img alt="Paper" src="http://img.shields.io/badge/Paper-arXiv%3A2406.13642-B31B1B.svg">
     </a>
-    <a href="https://huggingface.co/datasets/RussRobin/SpatialQA">
-        <img alt="Dataset" src="https://img.shields.io/badge/🤗%20Dataset-SpatialQA-yellow">
-    </a>
     <a href="https://huggingface.co/RussRobin/SpatialBot-3B">
         <img alt="Model SpatialBot-3B" src="https://img.shields.io/badge/🤗%20Model-SpatialBot--3B-green">
     </a>
@@ -16,6 +13,12 @@
         <img alt="Benchmark" src="https://img.shields.io/badge/🤗%20Benchmark-SpatialBench-blue">
     </a>
 </p>
+
+[//]: # (<a href="https://huggingface.co/datasets/RussRobin/SpatialQA">)
+
+[//]: # (        <img alt="Dataset" src="https://img.shields.io/badge/🤗%20Dataset-SpatialQA-yellow">)
+
+[//]: # (    </a>)
 
 This is the official repo for "SpatialBot: Precise Spatial Understanding with Vision Language Models".
 
@@ -94,24 +97,7 @@ output_ids = model.generate(
 )[0]
 
 print(tokenizer.decode(output_ids[input_ids.shape[1]:], skip_special_tokens=True).strip())
-
 ```
-
-
-## 📊 SpatialQA Dataset
-
-### Image
-We use [LAION-2M](https://huggingface.co/datasets/BoyaWu10/Bunny-v1_0-data/tree/main/pretrain) for pretraining. 
-The finetuning dataset is based on [Bunny_695k](https://huggingface.co/datasets/BoyaWu10/Bunny-v1_0-data/tree/main/finetune). 
-Please download images in Bunny_695k first, and then download [SpatialQA](https://huggingface.co/datasets/RussRobin/SpatialQA).
-
-### Data json
-Pretrain data json file can be found in [LAION-2M](https://huggingface.co/datasets/BoyaWu10/Bunny-v1_0-data/tree/main/pretrain).
-[SpatialQA](https://huggingface.co/datasets/RussRobin/SpatialQA) is used in finetuning.
-
-### Prepare your own RGBD data
-We recommend using depth information from sensors if possible.
-Follow [depthmap instructions](https://github.com/BAAI-DCAI/SpatialBot/blob/main/SpatialQA_depthmap_instruction/SpatialQA_depthmap_instruction.md) to prepare estimated depth information on your own RGB images.
 
 ## 🤖 SpatialBot Installation
 SpatialBot is a multi-image version of [Bunny](https://github.com/BAAI-DCAI/Bunny). 
@@ -203,6 +189,32 @@ python -m bunny.serve.cli \
 	--conv-mode bunny \ # NOTE: or phi3/llama. bunny is for Phi-2 and QWen1.5
 	--image-file /path/to/the/test/rgb/image \
 ```
+
+## 📊 SpatialQA Dataset
+
+Please reach out to us if you are interested in SpatialQA: `wxcai@stanford.edu`.
+
+Feel free to try [SpatialBot-3B model](https://huggingface.co/RussRobin/SpatialBot-3B), which is trained on SpatialQA.
+
+[//]: # (### Image)
+
+[//]: # (We use [LAION-2M]&#40;https://huggingface.co/datasets/BoyaWu10/Bunny-v1_0-data/tree/main/pretrain&#41; for pretraining. )
+
+[//]: # (The finetuning dataset is based on [Bunny_695k]&#40;https://huggingface.co/datasets/BoyaWu10/Bunny-v1_0-data/tree/main/finetune&#41;. )
+
+[//]: # (Please download images in Bunny_695k first, and then download [SpatialQA]&#40;https://huggingface.co/datasets/RussRobin/SpatialQA&#41;.)
+
+[//]: # ()
+[//]: # (### Data json)
+
+[//]: # (Pretrain data json file can be found in [LAION-2M]&#40;https://huggingface.co/datasets/BoyaWu10/Bunny-v1_0-data/tree/main/pretrain&#41;.)
+
+[//]: # ([SpatialQA]&#40;https://huggingface.co/datasets/RussRobin/SpatialQA&#41; is used in finetuning.)
+
+### Prepare your own RGBD data
+We recommend using depth information from sensors if possible.
+Follow [depthmap instructions](https://github.com/BAAI-DCAI/SpatialBot/blob/main/SpatialQA_depthmap_instruction/SpatialQA_depthmap_instruction.md) to prepare estimated depth information on your own RGB images.
+
 
 ## 🔗 Usage
 If you find this repository helpful, please cite our paper.
