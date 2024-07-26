@@ -27,6 +27,8 @@ SJTU, Stanford, BAAI, PKU, Oxford, SEU
 <!-- ![comparison_8B](comparison_8B.png) -->
 
 ## 🚀 Quickstart
+#### NOTE: We update the repo and quick start codes in 26 July, 2024. Please update your codes if you downloaded them before this date.
+
 1. Install dependencies first:
 
 ```
@@ -68,9 +70,9 @@ tokenizer = AutoTokenizer.from_pretrained(
 
 # text prompt
 prompt = 'What is the depth value of point <0.5,0.2>? Answer directly from depth map.'
-text = f"A chat between a curious user and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the user's questions. USER: <image 1>\n{prompt} ASSISTANT:"
-text_chunks = [tokenizer(chunk).input_ids for chunk in text.split('<image 1>')]
-input_ids = torch.tensor(text_chunks[0] + [-200] + text_chunks[1][offset_bos:], dtype=torch.long).unsqueeze(0).to(device)
+text = f"A chat between a curious user and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the user's questions. USER: <image 1>\n<image 2>\n{prompt} ASSISTANT:"
+text_chunks = [tokenizer(chunk).input_ids for chunk in text.split('<image 1>\n<image 2>\n')]
+input_ids = torch.tensor(text_chunks[0] + [-201] + [-202] + text_chunks[1][offset_bos:], dtype=torch.long).unsqueeze(0).to(device)
 
 image1 = Image.open('rgb.jpg')
 image2 = Image.open('depth.png')
