@@ -27,7 +27,7 @@ SJTU, Stanford, BAAI, PKU, Oxford, SEU
 <!-- ![comparison_8B](comparison_8B.png) -->
 
 ## 🚀 Quickstart
-#### NOTE: We update the repo and quick start codes in 26 July, 2024. Please update your codes if you downloaded them before this date.
+#### NOTE: We update SpatialBot-3B HuggingFace repo and quick start codes in 26 July, 2024. Please update your codes if you downloaded them before this date.
 
 1. Install dependencies first:
 
