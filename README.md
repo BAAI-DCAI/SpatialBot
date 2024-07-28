@@ -148,8 +148,8 @@ Parameters:
 
 ```--version```: for Phi-2 and QWen, use ```bunny```. For ```Phi-3/Llama3```, please use ```phi3/llama```
 
-Please find finetuned ckpts of [SpatialBot-3B-LoRA](https://huggingface.co/RussRobin/SpatialBot-3B-LoRA) in HF, which is based on Phi-2 and SigLIP.
-Merged model is available at [SpatialBot-3B](https://huggingface.co/RussRobin/SpatialBot-3B).
+Please find finetuned ckpts of [SpatialBot-3B-LoRA](https://huggingface.co/RussRobin/SpatialBot-3B-LoRA) in HF, which is based on Phi-2 and SigLIP. You will need to modify paths in `config.json` to run on your device.
+Merged and ready to run model is available at [SpatialBot-3B](https://huggingface.co/RussRobin/SpatialBot-3B).
 Pretrained models can be found in [Model Zoo](https://github.com/BAAI-DCAI/Bunny?tab=readme-ov-file#model-zoo).
 
 
