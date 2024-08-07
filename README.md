@@ -12,6 +12,9 @@
     <a href="https://huggingface.co/datasets/RussRobin/SpatialBench">
         <img alt="Benchmark" src="https://img.shields.io/badge/🤗%20Benchmark-SpatialBench-blue">
     </a>
+    <a href="https://mp.weixin.qq.com/s/X1iqkkEMsop9DGCY08AfCw">
+        <img alt="News in Chinese" src="https://img.shields.io/badge/📰%20News_in_Chinese-机器之心-purple">
+    </a>
 </p>
 
 [//]: # (<a href="https://huggingface.co/datasets/RussRobin/SpatialQA">)
