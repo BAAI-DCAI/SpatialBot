@@ -30,7 +30,6 @@ SJTU, Stanford, BAAI, PKU, Oxford, SEU
 <!-- ![comparison_8B](comparison_8B.png) -->
 
 ## 🚀 Quickstart
-#### NOTE: We update SpatialBot-3B HuggingFace repo and quick start codes in 26 July, 2024. Please update your model and codes if you downloaded them before this date.
 
 1. Install dependencies first:
 
@@ -220,6 +219,10 @@ Feel free to try [SpatialBot-3B model](https://huggingface.co/RussRobin/SpatialB
 We recommend using depth information from sensors if possible.
 Follow [depthmap instructions](https://github.com/BAAI-DCAI/SpatialBot/blob/main/SpatialQA_depthmap_instruction/SpatialQA_depthmap_instruction.md) to prepare estimated depth information on your own RGB images.
 
+## ⚙ Embodied SpatialBot & SpatialQA-E Dataset
+We collect SpatialQA-E, a robot manipulation dataset focusing on spatial understanding and reasoning. 
+SpatialBot is finetuned on SpatialQA-E for pick-and-place abilities. 
+CKPTs and the dataset will be available soon.
 
 ## 🔗 Usage
 If you find this repository helpful, please cite our paper.
