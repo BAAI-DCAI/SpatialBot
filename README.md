@@ -221,7 +221,8 @@ Follow [depthmap instructions](https://github.com/BAAI-DCAI/SpatialBot/blob/main
 
 ## ⚙ Embodied SpatialBot & SpatialQA-E Dataset
 We collect SpatialQA-E, a robot manipulation dataset focusing on spatial understanding and reasoning. 
-SpatialBot is finetuned on SpatialQA-E for pick-and-place abilities. 
+
+SpatialBot is finetuned on SpatialQA-E for pick-and-place abilities. It is a Vision-Language-Action (VLA) model, supporting multi-frame RGB or RGB-D inputs.
 CKPTs and the dataset will be available soon.
 
 ## 🔗 Usage
