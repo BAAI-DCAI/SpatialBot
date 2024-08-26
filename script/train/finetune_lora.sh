@@ -13,7 +13,7 @@ deepspeed bunny/train/train.py \
     --model_name_or_path /path/to/base_llm_model \
     --model_type $MODEL_TYPE \
     --version bunny \
-    --data_path ./data/finetune/bunny_695k.json \
+    --data_path ./data/finetune/SpatialQA.json \
     --image_folder ./data/finetune/images \
     --vision_tower /path/to/siglip-so400m-patch14-384 \
     --pretrain_mm_mlp_adapter ./checkpoints-pretrain/$PRETRAIN_DIR/mm_projector.bin \
