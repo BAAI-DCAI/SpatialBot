@@ -91,6 +91,9 @@ if channels == 1:
 
 image_tensor = model.process_images([image1,image2], model.config).to(dtype=model.dtype, device=device)
 
+# If 'Expected all tensors to be on the same device' error is thrown, uncomment the following line
+# model.get_vision_tower().to('cuda')
+
 # generate
 output_ids = model.generate(
     input_ids,
