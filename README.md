@@ -12,6 +12,9 @@
     <a href="https://huggingface.co/datasets/RussRobin/SpatialBench">
         <img alt="Benchmark" src="https://img.shields.io/badge/🤗%20Benchmark-SpatialBench-blue">
     </a>
+    <a href="https://mp.weixin.qq.com/s/X1iqkkEMsop9DGCY08AfCw">
+        <img alt="News in Chinese" src="https://img.shields.io/badge/📰%20News_in_Chinese-机器之心-purple">
+    </a>
 </p>
 
 [//]: # (<a href="https://huggingface.co/datasets/RussRobin/SpatialQA">)
@@ -27,7 +30,6 @@ SJTU, Stanford, BAAI, PKU, Oxford, SEU
 <!-- ![comparison_8B](comparison_8B.png) -->
 
 ## 🚀 Quickstart
-#### NOTE: We update SpatialBot-3B HuggingFace repo and quick start codes in 26 July, 2024. Please update your model and codes if you downloaded them before this date.
 
 1. Install dependencies first:
 
@@ -217,6 +219,11 @@ Feel free to try [SpatialBot-3B model](https://huggingface.co/RussRobin/SpatialB
 We recommend using depth information from sensors if possible.
 Follow [depthmap instructions](https://github.com/BAAI-DCAI/SpatialBot/blob/main/SpatialQA_depthmap_instruction/SpatialQA_depthmap_instruction.md) to prepare estimated depth information on your own RGB images.
 
+## ⚙ Embodied SpatialBot & SpatialQA-E Dataset
+We collect SpatialQA-E, a robot manipulation dataset focusing on spatial understanding and reasoning. 
+
+SpatialBot is finetuned on SpatialQA-E for pick-and-place abilities. It is a Vision-Language-Action (VLA) model, supporting multi-frame RGB or RGB-D inputs.
+CKPTs and the dataset will be available soon.
 
 ## 🔗 Usage
 If you find this repository helpful, please cite our paper.
