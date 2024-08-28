@@ -118,7 +118,15 @@ def main():
                 depth_path = os.path.join(args.data_path,dataset_name,data['image'][i].split('/')[-1].split('.')[0]+'.png')
             data['image'][i] = Image.open(os.path.join(args.data_path,data['image'][i]))
             if args.depth:
-                data['image'].append(Image.open(depth_path))
+                image_d = Image.open(depth_path)
+                img_d = np.array(image_d)
+                width, height = image_d.size
+                three_channel_array = np.zeros((height, width, 3), dtype=np.uint8)
+                three_channel_array[:, :, 0] = (img_d // 1024) * 4
+                three_channel_array[:, :, 1] = (img_d // 32) * 8
+                three_channel_array[:, :, 2] = (img_d % 32) * 8
+                image_d = Image.fromarray(three_channel_array, 'RGB')
+                data['image'].append(Iimage_d)
         
         if 'id' not in data.keys():
             data['id'] = idx
