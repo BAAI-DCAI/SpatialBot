@@ -29,6 +29,9 @@ SJTU, Stanford, BAAI, PKU, Oxford, SEU
 
 <!-- ![comparison_8B](comparison_8B.png) -->
 
+Model: [🤗3B model in HF](https://huggingface.co/RussRobin/SpatialBot-3B) | [🤗3B ckpt in HF](https://huggingface.co/RussRobin/SpatialBot-3B-LoRA) | [🤖3B model in wisemodel](https://wisemodel.cn/models/RussellRobin/SpatialBot-3B) | [🤖3B LoRA ckpt in wisemodel](https://wisemodel.cn/models/RussellRobin/SpatialBot-3B-LoRA)
+
+Benchmark: [🤗SpatialBench in HF](https://huggingface.co/datasets/RussRobin/SpatialBench) | [🤖SpatialBench in wisemodel](https://wisemodel.cn/datasets/RussellRobin/SpatialBench/file)
 ## 🚀 Quickstart
 
 1. Install dependencies first:
@@ -175,7 +178,7 @@ Please refer to [embodiment instructions](https://github.com/BAAI-DCAI/SpatialBo
 to evaluate model on embodiment tasks.
 
 To merge LoRA tuning models, see [merge instructions](https://github.com/BAAI-DCAI/SpatialBot/blob/main/script/merge_instruction.md)
-## CLI Inference
+## 🤔 CLI Inference
 RGBD inference:
 ```
 python -m bunny.serve.cli_depth \
