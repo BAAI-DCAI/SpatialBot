@@ -29,7 +29,7 @@ SJTU, Stanford, BAAI, PKU, Oxford, SEU
 
 <!-- ![comparison_8B](comparison_8B.png) -->
 
-Model: [🤗3B model in HF](https://huggingface.co/RussRobin/SpatialBot-3B) | [🤗3B ckpt in HF](https://huggingface.co/RussRobin/SpatialBot-3B-LoRA) | [🤖3B model in wisemodel](https://wisemodel.cn/models/RussellRobin/SpatialBot-3B) | [🤖3B LoRA ckpt in wisemodel](https://wisemodel.cn/models/RussellRobin/SpatialBot-3B-LoRA)
+Model: [🤗3B model in HF](https://huggingface.co/RussRobin/SpatialBot-3B) | [🤗3B ckpt in HF](https://huggingface.co/RussRobin/SpatialBot-3B-LoRA) | [🤖3B model in wisemodel](https://wisemodel.cn/models/RussellRobin/SpatialBot-3B) | [🤖3B ckpt in wisemodel](https://wisemodel.cn/models/RussellRobin/SpatialBot-3B-LoRA)
 
 Benchmark: [🤗SpatialBench in HF](https://huggingface.co/datasets/RussRobin/SpatialBench) | [🤖SpatialBench in wisemodel](https://wisemodel.cn/datasets/RussellRobin/SpatialBench/file)
 ## 🚀 Quickstart
