@@ -160,6 +160,60 @@ Please find finetuned ckpts of [SpatialBot-3B-LoRA](https://huggingface.co/RussR
 Merged and ready to run model is available at [SpatialBot-3B](https://huggingface.co/RussRobin/SpatialBot-3B).
 Pretrained models can be found in [Model Zoo](https://github.com/BAAI-DCAI/Bunny?tab=readme-ov-file#model-zoo).
 
+### Continuous  Fine-tuning
+
+<details>
+<summary>expand to see the instructions for continuously finetuing SpatialBot on your own data.</summary>
+
+
+1. Prepare data: convert your data to a `JSON` file of a list of all samples with the format like:
+```
+[
+    {
+        'id': continuous_1,
+        'image': ['/path/to/image_1','path_to_image_2'], # images are optional. We support 0-8 images, 0-2 recommended.
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<image 1>\n<image 2>\nHello SpatialBot."
+            },
+            {
+                "from": "gpt",
+                "value": "Hi."
+            }
+    },
+    {...}, # other QAs
+]
+```
+
+3. Prepare model:
+
+   * download Bunny [models](#model-zoo) and if only LoRA provided, merge the LoRA weights and base LLM
+
+     ```shell
+     python script/merge_lora_weights.py \
+       --model-path /path/to/bunny_lora_weights \
+       --model-base /path/to/base_llm_model \
+       --model-type phi-2 (or qwen1.5-1.8b or qwen1.5-0.5b or phi-3 or llama3-8b) \
+       --save-model-path /path/to/merged_model
+     ```
+   * add `"continuous_training": true` in `/path/to/merged_model/config.json` to ensure loading the vision tower from merged weights
+   
+
+
+3. Edit script: both `finetune_full.sh` and `finetune_lora.sh` can be used, before:
+
+   * change `--model_name_or_path` to `/path/to/merged_model`
+
+   * delete `--pretrain_mm_mlp_adapter` because we load the cross-modality projector from merged weights
+
+   * customize the hyperparameters, e.g. the learning rate, to fit your dataset
+
+**Note** that if you continuously fine-tune Bunny models using LoRA, `--model-base` should be SpatialBot models rather than the original LLMs when loading.
+
+</details>
+
+
 
 ## 🏆 SpatialBench
 Please download [SpatialBench](https://huggingface.co/datasets/RussRobin/SpatialBench) and
