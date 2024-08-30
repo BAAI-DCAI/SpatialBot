@@ -170,7 +170,7 @@ Pretrained models can be found in [Model Zoo](https://github.com/BAAI-DCAI/Bunny
 ```
 [
     {
-        'id': continuous_1,
+        'id': 'continuous_1',
         'image': ['/path/to/image_1','path_to_image_2'], # images are optional. We support 0-8 images, 0-2 recommended.
         "conversations": [
             {
@@ -188,19 +188,10 @@ Pretrained models can be found in [Model Zoo](https://github.com/BAAI-DCAI/Bunny
 
 3. Prepare model:
 
-   * download Bunny [models](#model-zoo) and if only LoRA provided, merge the LoRA weights and base LLM
+   * download merged LoRA [SpatialBot](https://huggingface.co/RussRobin/SpatialBot-3B) 
 
-     ```shell
-     python script/merge_lora_weights.py \
-       --model-path /path/to/bunny_lora_weights \
-       --model-base /path/to/base_llm_model \
-       --model-type phi-2 (or qwen1.5-1.8b or qwen1.5-0.5b or phi-3 or llama3-8b) \
-       --save-model-path /path/to/merged_model
-     ```
    * add `"continuous_training": true` in `/path/to/merged_model/config.json` to ensure loading the vision tower from merged weights
    
-
-
 3. Edit script: both `finetune_full.sh` and `finetune_lora.sh` can be used, before:
 
    * change `--model_name_or_path` to `/path/to/merged_model`
@@ -209,7 +200,7 @@ Pretrained models can be found in [Model Zoo](https://github.com/BAAI-DCAI/Bunny
 
    * customize the hyperparameters, e.g. the learning rate, to fit your dataset
 
-**Note** that if you continuously fine-tune Bunny models using LoRA, `--model-base` should be SpatialBot models rather than the original LLMs when loading.
+**Please note that** if you continuously fine-tune SpatialBot using LoRA, `--model-base` should be SpatialBot models rather than the original LLMs when loading.
 
 </details>
 
