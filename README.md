@@ -186,7 +186,7 @@ Pretrained models can be found in [Model Zoo](https://github.com/BAAI-DCAI/Bunny
 ]
 ```
 
-3. Prepare model:
+2. Prepare model:
 
    * download merged LoRA [SpatialBot](https://huggingface.co/RussRobin/SpatialBot-3B) 
 
