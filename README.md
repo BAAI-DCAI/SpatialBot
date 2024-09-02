@@ -280,11 +280,11 @@ CKPTs and the dataset will be available soon.
 If you find this repository helpful, please cite our paper.
 
 ```bibtex
-@inproceedings{Cai2024SpatialBotPS,
+@article{cai2024spatialbot,
   title={SpatialBot: Precise Spatial Understanding with Vision Language Models},
-  author={Wenxiao Cai and Yaroslav Ponomarenko and Jianhao Yuan and Xiaoqi Li and Wankou Yang and Hao Dong and Bo Zhao},
-  year={2024},
-  url={https://api.semanticscholar.org/CorpusID:270619467}
+  author={Cai, Wenxiao and Ponomarenko, Yaroslav and Yuan, Jianhao and Li, Xiaoqi and Yang, Wankou and Dong, Hao and Zhao, Bo},
+  journal={arXiv preprint arXiv:2406.13642},
+  year={2024}
 }
 ```
 
