@@ -32,6 +32,8 @@ SJTU, Stanford, BAAI, PKU, Oxford, SEU
 Model: [🤗3B model in HF](https://huggingface.co/RussRobin/SpatialBot-3B) | [🤗3B ckpt in HF](https://huggingface.co/RussRobin/SpatialBot-3B-LoRA) | [🤖3B model in wisemodel](https://wisemodel.cn/models/RussellRobin/SpatialBot-3B) | [🤖3B ckpt in wisemodel](https://wisemodel.cn/models/RussellRobin/SpatialBot-3B-LoRA)
 
 Benchmark: [🤗SpatialBench in HF](https://huggingface.co/datasets/RussRobin/SpatialBench) | [🤖SpatialBench in wisemodel](https://wisemodel.cn/datasets/RussellRobin/SpatialBench/file)
+
+Preview: [SpatialBot in embodiment](https://drive.google.com/drive/folders/1WBt5M0h2Z8k_ohPVUVEwIcCDaLxF9yv9?usp=sharing)
 ## 🚀 Quickstart
 
 1. Install dependencies first:
@@ -277,6 +279,9 @@ SpatialBot is finetuned on SpatialQA-E for pick-and-place abilities. It is a Vis
 One version of SpatialBot works by predicting delta position (or velocity) per each frame. 
 Another version works by moving among predicted key points.
 CKPTs and the dataset will be available soon.
+
+A [preview](https://drive.google.com/drive/folders/1WBt5M0h2Z8k_ohPVUVEwIcCDaLxF9yv9?usp=sharing) of SpatialBot in embodiment is available.
+
 
 ## 🔗 Usage
 If you find this repository helpful, please cite our paper.
