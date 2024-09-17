@@ -33,7 +33,9 @@ Model: [🤗3B model in HF](https://huggingface.co/RussRobin/SpatialBot-3B) | [�
 
 Benchmark: [🤗SpatialBench in HF](https://huggingface.co/datasets/RussRobin/SpatialBench) | [🤖SpatialBench in wisemodel](https://wisemodel.cn/datasets/RussellRobin/SpatialBench/file)
 
-Preview: [SpatialBot in embodiment](https://drive.google.com/drive/folders/1WBt5M0h2Z8k_ohPVUVEwIcCDaLxF9yv9?usp=sharing)
+Paper: [📃General VQA + embodiment arXiv](https://arxiv.org/abs/2406.13642)
+
+Embodiment Videos Preview: [⚙ SpatialBot in embodiment](https://drive.google.com/drive/folders/1WBt5M0h2Z8k_ohPVUVEwIcCDaLxF9yv9?usp=sharing)
 ## 🚀 Quickstart
 
 1. Install dependencies first:
