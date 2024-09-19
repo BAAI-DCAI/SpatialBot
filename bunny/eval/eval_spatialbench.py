@@ -126,7 +126,7 @@ def main():
                 three_channel_array[:, :, 1] = (img_d // 32) * 8
                 three_channel_array[:, :, 2] = (img_d % 32) * 8
                 image_d = Image.fromarray(three_channel_array, 'RGB')
-                data['image'].append(Iimage_d)
+                data['image'].append(image_d)
         
         if 'id' not in data.keys():
             data['id'] = idx
