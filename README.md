@@ -31,6 +31,8 @@ SJTU, Stanford, BAAI, PKU, Oxford, SEU
 
 Model: [🤗3B model in HF](https://huggingface.co/RussRobin/SpatialBot-3B) | [🤗3B ckpt in HF](https://huggingface.co/RussRobin/SpatialBot-3B-LoRA) | [🤖3B model in wisemodel](https://wisemodel.cn/models/RussellRobin/SpatialBot-3B) | [🤖3B ckpt in wisemodel](https://wisemodel.cn/models/RussellRobin/SpatialBot-3B-LoRA)
 
+Training set SpatialQA: Please drop an email to wxcai@stanford.edu
+
 Benchmark: [🤗SpatialBench in HF](https://huggingface.co/datasets/RussRobin/SpatialBench) | [🤖SpatialBench in wisemodel](https://wisemodel.cn/datasets/RussellRobin/SpatialBench/file)
 
 Paper: [📃General VQA + embodiment arXiv](https://arxiv.org/abs/2406.13642)
