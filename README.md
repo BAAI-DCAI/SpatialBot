@@ -7,13 +7,16 @@
         <img alt="Paper" src="http://img.shields.io/badge/Paper-arXiv%3A2406.13642-B31B1B.svg">
     </a>
     <a href="https://huggingface.co/RussRobin/SpatialBot-3B">
-        <img alt="Model SpatialBot-3B" src="https://img.shields.io/badge/🤗%20Model-SpatialBot--3B-green">
+        <img alt="Model SpatialBot-3B" src="https://img.shields.io/badge/🤗%20Model-SpatialBot--3B-orange">
     </a>
     <a href="https://huggingface.co/datasets/RussRobin/SpatialBench">
-        <img alt="Benchmark" src="https://img.shields.io/badge/🤗%20Benchmark-SpatialBench-blue">
+        <img alt="Benchmark" src="https://img.shields.io/badge/🤗%20Benchmark-SpatialBench-yellow">
+    </a>
+   <a href="https://huggingface.co/datasets/RussRobin/SpatialQA-E">
+        <img alt="Model SpatialQA-Embodiment" src="https://img.shields.io/badge/🤗%20Embodiment Dataset-SpatialQA--E-green">
     </a>
     <a href="https://mp.weixin.qq.com/s/X1iqkkEMsop9DGCY08AfCw">
-        <img alt="News in Chinese" src="https://img.shields.io/badge/📰%20News_in_Chinese-机器之心-purple">
+        <img alt="News in Chinese" src="https://img.shields.io/badge/📰%20News_in_Chinese-机器之心-blue">
     </a>
 </p>
 
@@ -31,7 +34,10 @@ SJTU, Stanford, BAAI, PKU, Oxford, SEU
 
 Model: [🤗3B model in HF](https://huggingface.co/RussRobin/SpatialBot-3B) | [🤗3B ckpt in HF](https://huggingface.co/RussRobin/SpatialBot-3B-LoRA) | [🤖3B model in wisemodel](https://wisemodel.cn/models/RussellRobin/SpatialBot-3B) | [🤖3B ckpt in wisemodel](https://wisemodel.cn/models/RussellRobin/SpatialBot-3B-LoRA)
 
-Training set SpatialQA: Please drop an email to wxcai@stanford.edu
+Training set SpatialQA: Please drop an email to `wxcai@stanford.edu`
+
+Embodiment training set SpatialQA-E: [🤗SpatialQA-E in HF](https://huggingface.co/datasets/RussRobin/SpatialQA-E)
+
 
 Benchmark: [🤗SpatialBench in HF](https://huggingface.co/datasets/RussRobin/SpatialBench) | [🤖SpatialBench in wisemodel](https://wisemodel.cn/datasets/RussellRobin/SpatialBench/file)
 
@@ -278,6 +284,8 @@ Follow [depthmap instructions](https://github.com/BAAI-DCAI/SpatialBot/blob/main
 
 ## ⚙ Embodied SpatialBot & SpatialQA-E Dataset
 We collect SpatialQA-E, a robot manipulation dataset focusing on spatial understanding and reasoning. 
+
+Download: [🤗SpatialQA-E in HF](https://huggingface.co/datasets/RussRobin/SpatialQA-E)
 
 SpatialBot is finetuned on SpatialQA-E for pick-and-place abilities. It is a Vision-Language-Action (VLA) model, supporting multi-frame RGB or RGB-D inputs. 
 One version of SpatialBot works by predicting delta position (or velocity) per each frame. 
