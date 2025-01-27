@@ -1,5 +1,5 @@
 <h1 align = "center">
-  SpatialBot
+  SpatialBot (ICRA 2025)
 </h1>
 
 <p align="center">
@@ -26,7 +26,7 @@
 
 [//]: # (    </a>)
 
-This is the official repo for "SpatialBot: Precise Spatial Understanding with Vision Language Models".
+This is the official repo for ICRA 2025 paper: "SpatialBot: Precise Spatial Understanding with Vision Language Models".
 
 SJTU, Stanford, BAAI, PKU, Oxford, SEU
 
