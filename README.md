@@ -9,14 +9,17 @@
     <a href="https://huggingface.co/RussRobin/SpatialBot-3B">
         <img alt="Model SpatialBot-3B" src="https://img.shields.io/badge/🤗%20Model-SpatialBot--3B-orange">
     </a>
+   <a href="https://huggingface.co/datasets/RussRobin/SpatialQA">
+        <img alt="Data" src="https://img.shields.io/badge/🤗%20Data-SpatialQA-yellow">
+    </a>
     <a href="https://huggingface.co/datasets/RussRobin/SpatialBench">
-        <img alt="Benchmark" src="https://img.shields.io/badge/🤗%20Benchmark-SpatialBench-yellow">
+        <img alt="Benchmark" src="https://img.shields.io/badge/🤗%20Benchmark-SpatialBench-green">
     </a>
    <a href="https://huggingface.co/datasets/RussRobin/SpatialQA-E">
-        <img alt="Model SpatialQA-Embodiment" src="https://img.shields.io/badge/🤗%20Embodiment Dataset-SpatialQA--E-green">
+        <img alt="Model SpatialQA-Embodiment" src="https://img.shields.io/badge/🤗%20Embodiment Dataset-SpatialQA--E-blue">
     </a>
     <a href="https://mp.weixin.qq.com/s/X1iqkkEMsop9DGCY08AfCw">
-        <img alt="News in Chinese" src="https://img.shields.io/badge/📰%20News_in_Chinese-机器之心-blue">
+        <img alt="News in Chinese" src="https://img.shields.io/badge/📰%20News_in_Chinese-机器之心-purple">
     </a>
 </p>
 
@@ -34,12 +37,12 @@ SJTU, Stanford, BAAI, PKU, Oxford, SEU
 
 Model: [🤗3B model in HF](https://huggingface.co/RussRobin/SpatialBot-3B) | [🤗3B ckpt in HF](https://huggingface.co/RussRobin/SpatialBot-3B-LoRA) | [🤖3B model in wisemodel](https://wisemodel.cn/models/RussellRobin/SpatialBot-3B) | [🤖3B ckpt in wisemodel](https://wisemodel.cn/models/RussellRobin/SpatialBot-3B-LoRA)
 
-Training set SpatialQA: Please drop an email to `wxcai@stanford.edu`
+Training set SpatialQA: [🤗SpatialQA](https://huggingface.co/datasets/RussRobin/SpatialQA)
 
-Embodiment training set SpatialQA-E: [🤗SpatialQA-E in HF](https://huggingface.co/datasets/RussRobin/SpatialQA-E)
+Embodiment training set SpatialQA-E: [🤗SpatialQA-E](https://huggingface.co/datasets/RussRobin/SpatialQA-E)
 
 
-Benchmark: [🤗SpatialBench in HF](https://huggingface.co/datasets/RussRobin/SpatialBench) | [🤖SpatialBench in wisemodel](https://wisemodel.cn/datasets/RussellRobin/SpatialBench/file)
+Benchmark: [🤗SpatialBench](https://huggingface.co/datasets/RussRobin/SpatialBench) | [🤖SpatialBench in wisemodel](https://wisemodel.cn/datasets/RussellRobin/SpatialBench/file)
 
 Paper: [📃General VQA + embodiment arXiv](https://arxiv.org/abs/2406.13642)
 
@@ -259,9 +262,7 @@ python -m bunny.serve.cli \
 
 ## 📊 SpatialQA Dataset
 
-Please reach out to us if you are interested in SpatialQA: `wxcai@stanford.edu`.
-
-Feel free to try [SpatialBot-3B model](https://huggingface.co/RussRobin/SpatialBot-3B), which is trained on SpatialQA.
+Download: [🤗SpatialQA](https://huggingface.co/datasets/RussRobin/SpatialQA)
 
 [//]: # (### Image)
 
