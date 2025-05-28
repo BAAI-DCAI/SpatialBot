@@ -229,7 +229,7 @@ Use our [SpatialBench script](https://github.com/BAAI-DCAI/SpatialBot/blob/main/
 Parameters:
 ```--depth```: use this parameter is evaluating model with RGB-Depth input. Otherwise, RGB only. 
 
-🔥 News: [STI-Bench: Spatial Understanding from Videos](https://github.com/MINT-SJTU/STI-Bench)
+🔥 News: [STI-Bench: Spatial Temporal Understanding from Videos](https://github.com/MINT-SJTU/STI-Bench)
 
 ## 📃 SpatialBot Evaluation
 Please follow our [general instructions LoRA](https://github.com/BAAI-DCAI/SpatialBot/blob/main/script/eval/lora/evaluation_lora.md),
