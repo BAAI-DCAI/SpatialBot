@@ -3,20 +3,23 @@
 </h1>
 
 <p align="center">
+	<a href="https://ieeexplore.ieee.org/abstract/document/11128671">
+        <img alt="ICRA Paper" src="http://img.shields.io/badge/Paper-ICRA-B31B1B.svg">
+    </a>
     <a href="https://arxiv.org/abs/2406.13642">
-        <img alt="Paper" src="http://img.shields.io/badge/Paper-arXiv%3A2406.13642-B31B1B.svg">
+        <img alt="arXiv Paper" src="http://img.shields.io/badge/Paper-arXiv full length-orange">
     </a>
     <a href="https://huggingface.co/RussRobin/SpatialBot-3B">
-        <img alt="Model SpatialBot-3B" src="https://img.shields.io/badge/🤗%20Model-SpatialBot--3B-orange">
+        <img alt="Model SpatialBot-3B" src="https://img.shields.io/badge/🤗%20Model-SpatialBot--3B-yellow">
     </a>
    <a href="https://huggingface.co/datasets/RussRobin/SpatialQA">
-        <img alt="Data" src="https://img.shields.io/badge/🤗%20Data-SpatialQA-yellow">
+        <img alt="Data" src="https://img.shields.io/badge/🤗%20Data-SpatialQA-green">
     </a>
     <a href="https://huggingface.co/datasets/RussRobin/SpatialBench">
-        <img alt="Benchmark" src="https://img.shields.io/badge/🤗%20Benchmark-SpatialBench-green">
+        <img alt="Benchmark" src="https://img.shields.io/badge/🤗%20Benchmark-SpatialBench-blue">
     </a>
    <a href="https://huggingface.co/datasets/RussRobin/SpatialQA-E">
-        <img alt="Model SpatialQA-Embodiment" src="https://img.shields.io/badge/🤗%20Embodiment Dataset-SpatialQA--E-blue">
+        <img alt="Model SpatialQA-Embodiment" src="https://img.shields.io/badge/🤗%20Embodiment Dataset-SpatialQA--E-indigo">
     </a>
     <a href="https://mp.weixin.qq.com/s/X1iqkkEMsop9DGCY08AfCw">
         <img alt="News in Chinese" src="https://img.shields.io/badge/📰%20News_in_Chinese-机器之心-purple">
@@ -44,7 +47,9 @@ Embodiment training set SpatialQA-E: [🤗SpatialQA-E](https://huggingface.co/da
 
 Benchmark: [🤗SpatialBench](https://huggingface.co/datasets/RussRobin/SpatialBench) | [🤖SpatialBench in wisemodel](https://wisemodel.cn/datasets/RussellRobin/SpatialBench/file)
 
-Paper: [📃General VQA + embodiment arXiv](https://arxiv.org/abs/2406.13642)
+Short Paper: [📒ICRA](https://ieeexplore.ieee.org/abstract/document/11128671)
+
+Full Length Paper: [📃General VQA + Embodiment arXiv](https://arxiv.org/abs/2406.13642)
 
 Embodiment Videos Preview: [⚙ SpatialBot in embodiment](https://drive.google.com/drive/folders/1WBt5M0h2Z8k_ohPVUVEwIcCDaLxF9yv9?usp=sharing)
 ## 🚀 Quickstart
