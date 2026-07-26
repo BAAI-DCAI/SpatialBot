@@ -307,11 +307,13 @@ A [preview](https://drive.google.com/drive/folders/1WBt5M0h2Z8k_ohPVUVEwIcCDaLxF
 If you find this repository helpful, please cite our paper.
 
 ```bibtex
-@article{cai2024spatialbot,
-  title={SpatialBot: Precise Spatial Understanding with Vision Language Models},
-  author={Cai, Wenxiao and Ponomarenko, Yaroslav and Yuan, Jianhao and Li, Xiaoqi and Yang, Wankou and Dong, Hao and Zhao, Bo},
-  journal={arXiv preprint arXiv:2406.13642},
-  year={2024}
+@inproceedings{cai2025spatialbot,
+  title={Spatialbot: Precise spatial understanding with vision language models},
+  author={Cai, Wenxiao and Ponomarenko, Iaroslav and Yuan, Jianhao and Li, Xiaoqi and Yang, Wankou and Dong, Hao and Zhao, Bo},
+  booktitle={2025 IEEE International Conference on Robotics and Automation (ICRA)},
+  pages={9490--9498},
+  year={2025},
+  organization={IEEE}
 }
 ```
 
